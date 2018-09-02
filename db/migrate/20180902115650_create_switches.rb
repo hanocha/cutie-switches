@@ -7,6 +7,8 @@ class CreateSwitches < ActiveRecord::Migration[5.2]
       t.string :base_color
       t.string :shaft_color
       t.string :feeling
+      t.string :sound_file_url
+      t.string :image
 
       t.timestamps
     end

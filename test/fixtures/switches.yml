@@ -7,6 +7,8 @@ one:
   base_color: MyString
   shaft_color: MyString
   feeling: MyString
+  sound_file_url: MyString
+  image: MyString
 
 two:
   name: MyString
@@ -15,3 +17,5 @@ two:
   base_color: MyString
   shaft_color: MyString
   feeling: MyString
+  sound_file_url: MyString
+  image: MyString
