@@ -1,0 +1,14 @@
+<h1>Switches#show</h1>
+
+<%= button_to 'edit', { action: :edit }, method: :get %>
+
+<hr />
+
+<div>
+  <div><%= @switch.name %></div>
+  <div><%= image_tag @switch.image if @switch.image %></div>
+</div>
+
+<hr />
+
+<%= button_to 'back', { action: :index }, method: :get %>

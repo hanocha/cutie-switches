@@ -1,0 +1,17 @@
+<h1>Switches#index</h1>
+
+<div>
+  <% @switches.each do |switch| %>
+    <div>
+      <%= link_to switch_path(switch) do %>
+        <%= image_tag switch.image if switch.image %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<hr />
+
+<div>
+  <%= button_to 'new', { action: :new }, method: :get %>
+</div>
