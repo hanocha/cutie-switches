@@ -1,2 +1,10 @@
 <h1>Switches#index</h1>
-<p>Find me in app/views/switches/index.html.erb</p>
+
+<div>
+  <% @switches.each do |switch| %>
+    <div>
+      <div><%= switch.name %></div>
+      <%= image_tag switch.image if switch.image %>
+    </div>
+  <% end %>
+</div>

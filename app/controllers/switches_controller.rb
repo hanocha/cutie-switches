@@ -1,5 +1,6 @@
 class SwitchesController < ApplicationController
   def index
+    @switches = Switch.all
   end
 
   def show
