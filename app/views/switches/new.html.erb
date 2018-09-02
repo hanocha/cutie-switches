@@ -1,6 +1,7 @@
-<h1>Switches#index</h1>
+<h1>Switches#new</h1>
 
-<%= form_for @switch do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit 'create' %>
-<% end %>
+<%= render 'form' %> 
+
+<hr />
+
+<%= button_to 'back', { action: :index }, method: :get %>

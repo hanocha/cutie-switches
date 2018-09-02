@@ -3,8 +3,15 @@
 <div>
   <% @switches.each do |switch| %>
     <div>
-      <div><%= switch.name %></div>
-      <%= image_tag switch.image if switch.image %>
+      <%= link_to switch_path(switch) do %>
+        <%= image_tag switch.image if switch.image %>
+      <% end %>
     </div>
   <% end %>
+</div>
+
+<hr />
+
+<div>
+  <%= button_to 'new', { action: :new }, method: :get %>
 </div>

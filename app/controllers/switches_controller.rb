@@ -4,12 +4,17 @@ class SwitchesController < ApplicationController
   end
 
   def show
+    @switch = Switch.find(params['id'])
   end
 
   def edit
+    @switch = Switch.find(params['id'])
   end
 
   def update
+    @switch = Switch.find(params['id'])
+    @switch.update(switch_params)
+    redirect_to(action: :show)
   end
 
   def new
@@ -18,12 +23,12 @@ class SwitchesController < ApplicationController
 
   def create
     switch = Switch.create(switch_params)
-    redirect_to(switch_path(switch))
+    redirect_to switch_path(switch)
   end
 
   private
 
   def switch_params
-    params.require(:switch).permit(:name)
+    params.require(:switch).permit(:name, :image)
   end
 end
