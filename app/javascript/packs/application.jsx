@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
-import { App } from '../src/components/pages/App';
+import { List } from '../src/components/pages/Switch/list';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App />,
+    <List switches={[1, 2, 3]} />,
     document.body.appendChild(document.createElement('div')),
   )
 })
