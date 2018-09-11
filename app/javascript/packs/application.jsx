@@ -5,7 +5,7 @@ import { App } from '../src/components/pages/App';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App name="React" />,
+    <App />,
     document.body.appendChild(document.createElement('div')),
   )
 })
