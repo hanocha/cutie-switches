@@ -10,5 +10,8 @@ npm-debug.log
 # Nuxt generate
 dist
 
+# envrc
+.envrc
+
 # Plugin file, which containts access token
 plugins/axios.js
