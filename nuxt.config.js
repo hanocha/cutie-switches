@@ -26,6 +26,12 @@ module.exports = {
   */
   plugins: [],
   /*
+  ** environment variables
+  */
+  env: {
+    cdnPathBase: process.env.CDN_PATH_BASE,
+  },
+  /*
   ** Build configuration
   */
   build: {
