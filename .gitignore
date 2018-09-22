@@ -9,3 +9,6 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+# Plugin file, which containts access token
+plugins/axios.js

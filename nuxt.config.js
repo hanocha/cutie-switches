@@ -24,6 +24,12 @@ module.exports = {
     '@nuxtjs/axios',
   ],
   /*
+  ** Plugins configurations
+  */
+  plugins: [
+    '~/plugins/axios',
+  ],
+  /*
   ** Build configuration
   */
   build: {
