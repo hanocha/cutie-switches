@@ -1,43 +1,77 @@
 <template>
-  <div class="container">
-    <h1 class="title">
-      cutie-switches
-    </h1>
+  <div class='myContainer'>
+    <div class='mySwitchContainer' v-on:click='onClickMXGreen'>
+      <img
+        :src="imgPath('cherry-mx-green.png')"
+        class='mySwitchImage'
+      >
+    </div>
+    <div class='mySwitchContainer' v-on:click='onClickMXGray'>
+      <img
+        :src="imgPath('cherry-mx-gray.png')"
+        class='mySwitchImage'
+      >
+    </div>
+    <div class='mySwitchContainer' v-on:click='onClickMXRed'>
+      <img
+        :src="imgPath('cherry-mx-red.png')"
+        class='mySwitchImage'
+      >
+    </div>
   </div>
 </template>
 
 <script>
+import { Howl } from 'howler';
+
 export default {
+  computed: {
+    imgPath: () => {
+      return fileName => `${process.env.cdnPathBase}/${fileName}`;
+    },
+  },
+  methods: {
+    onClickMXGreen: function (e) {
+      const player = new Howl({
+        src: `${process.env.cdnPathBase}/cherry-mx-green.mp3`,
+      });
+      player.play();
+    },
+    onClickMXGray: function (e) {
+      const player = new Howl({
+        src: `${process.env.cdnPathBase}/cherry-mx-gray.mp3`,
+      });
+      player.play();
+    },
+    onClickMXRed: function (e) {
+      const player = new Howl({
+        src: `${process.env.cdnPathBase}/cherry-mx-red.mp3`,
+      });
+      player.play();
+    },
+  },
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss" scoped>
+.my {
+  &Container {
+    display: flex;
+    justify-content: space-around;
+  }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  &Switch {
+    &Container {
+      margin: 16px;
+      padding: 16px;
+      border: solid 2px black;
+      border-radius: 8px;
+    }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+    &Image {
+      max-width: 128px;
+      max-height: 128px;
+    }
+  }
 }
 </style>
