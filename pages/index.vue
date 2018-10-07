@@ -18,11 +18,13 @@
         class='mySwitchImage'
       >
     </div>
+    <switch-component img-src='cherry-mx-green.png' sound-src='cherry-mx-green.mp3' />
   </div>
 </template>
 
 <script>
 import { Howl } from 'howler';
+import Switch from '~/components/Switch.vue';
 
 export default {
   computed: {
@@ -49,6 +51,9 @@ export default {
       });
       player.play();
     },
+  },
+  components: {
+    'switch-component': Switch,
   },
 }
 </script>
