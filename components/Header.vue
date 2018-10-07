@@ -1,6 +1,6 @@
 <template>
   <div class='myContainer'>
-    <h1 class='myHeadline'>cutie-switches</h1>
+    <img src='~/assets/logo_outlined.svg'>
   </div>
 </template>
 
@@ -14,6 +14,8 @@ export default {
   &Container {
     display: flex;
     height: 64px;
+    justify-content: center;
+    margin: 8px;
   }
 
   &Headline {
