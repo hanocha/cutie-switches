@@ -17,17 +17,15 @@ export default {
     imgPath: function() {
       return `${process.env.cdnPathBase}/${this.imgSrc}`;
     },
-    soundPath: function() {
-      return `${process.env.cdnPathBase}/${this.soundSrc}`;
-    },
+  },
+  data: function() {
+    return {
+      player: new Howl({ src: `${process.env.cdnPathBase}/${this.soundSrc}` }),
+    };
   },
   methods: {
     onClick: function () {
-      console.log(this);
-      const player = new Howl({
-        src: this.soundPath,
-      });
-      player.play();
+      this.player.play();
     },
   },
 }
