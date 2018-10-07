@@ -20,7 +20,17 @@ module.exports = {
   /*
   ** Modules configurations
   */
-  modules: [],
+  modules: [
+    'nuxt-basic-auth-module',
+  ],
+  /*
+  ** Settings for basic auth module
+  */
+  basic: {
+    name: process.env.BASIC_AUTH_USER,
+    pass: process.env.BASIC_AUTH_PASS,
+    enabled: process.env.USE_BASIC_AUTH === 'true',
+  },
   /*
   ** Plugins configurations
   */
