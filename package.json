@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "howler": "^2.0.15",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "nuxt-basic-auth-module": "^1.0.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
