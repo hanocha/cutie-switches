@@ -1,24 +1,8 @@
 <template>
   <div class='myContainer'>
-    <div class='mySwitchContainer' v-on:click='onClickMXGreen'>
-      <img
-        :src="imgPath('cherry-mx-green.png')"
-        class='mySwitchImage'
-      >
-    </div>
-    <div class='mySwitchContainer' v-on:click='onClickMXGray'>
-      <img
-        :src="imgPath('cherry-mx-gray.png')"
-        class='mySwitchImage'
-      >
-    </div>
-    <div class='mySwitchContainer' v-on:click='onClickMXRed'>
-      <img
-        :src="imgPath('cherry-mx-red.png')"
-        class='mySwitchImage'
-      >
-    </div>
     <switch-component img-src='cherry-mx-green.png' sound-src='cherry-mx-green.mp3' />
+    <switch-component img-src='cherry-mx-gray.png' sound-src='cherry-mx-gray.mp3' />
+    <switch-component img-src='cherry-mx-red.png' sound-src='cherry-mx-red.mp3' />
   </div>
 </template>
 
@@ -27,31 +11,6 @@ import { Howl } from 'howler';
 import Switch from '~/components/Switch.vue';
 
 export default {
-  computed: {
-    imgPath: () => {
-      return fileName => `${process.env.cdnPathBase}/${fileName}`;
-    },
-  },
-  methods: {
-    onClickMXGreen: function (e) {
-      const player = new Howl({
-        src: `${process.env.cdnPathBase}/cherry-mx-green.mp3`,
-      });
-      player.play();
-    },
-    onClickMXGray: function (e) {
-      const player = new Howl({
-        src: `${process.env.cdnPathBase}/cherry-mx-gray.mp3`,
-      });
-      player.play();
-    },
-    onClickMXRed: function (e) {
-      const player = new Howl({
-        src: `${process.env.cdnPathBase}/cherry-mx-red.mp3`,
-      });
-      player.play();
-    },
-  },
   components: {
     'switch-component': Switch,
   },
