@@ -15,7 +15,7 @@ export default {
     display: flex;
     height: 64px;
     justify-content: center;
-    margin: 8px;
+    margin: 24px;
   }
 
   &Headline {
