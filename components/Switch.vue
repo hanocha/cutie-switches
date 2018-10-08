@@ -42,6 +42,7 @@ export default {
   &Container {
     display: flex;
     flex-direction: column;
+    width: 164px;
     margin: 16px;
     padding: 16px;
     border: solid 2px #cccccc;
@@ -56,7 +57,7 @@ export default {
 
   &Image {
     &Container {
-      margin: auto;
+      margin: 0 auto;
     }
 
     max-width: 128px;
