@@ -52,7 +52,9 @@ export default {
 
   &Name {
     padding: 0 0 16px 0;
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 1.25em;
+    color: #666666;
     text-align: center;
   }
 
