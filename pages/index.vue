@@ -1,5 +1,5 @@
 <template>
-  <div class='myContainer'>
+  <div :class='$style.myContainer'>
     <switch-component
       name='ALPS blue'
       img-src='alps_blue.png'
@@ -59,12 +59,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 .my {
   &Container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 }
 </style>

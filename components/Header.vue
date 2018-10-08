@@ -1,5 +1,5 @@
 <template>
-  <div class='myContainer'>
+  <div :class='$style.myContainer'>
     <img src='~/assets/logo_outlined.svg'>
   </div>
 </template>
@@ -9,7 +9,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss' module>
 .my {
   &Container {
     display: flex;

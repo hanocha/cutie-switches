@@ -1,12 +1,12 @@
 <template>
-  <div class='myContainer' v-on:click='onClick'>
-    <div class='myName'>
+  <div :class='$style.myContainer' v-on:click='onClick'>
+    <div :class='$style.myName'>
       {{ name }}
     </div>
-    <div class="myImageContainer" v-on:click='onClick'>
+    <div :class="$style.myImageContainer" v-on:click='onClick'>
       <img
         :src="imgPath"
-        class='myImage'
+        :class='$style.myImage'
       >
     </div>
   </div>
@@ -37,11 +37,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 .my {
   &Container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 164px;
     margin: 16px;
     padding: 16px;
