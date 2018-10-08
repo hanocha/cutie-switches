@@ -1,5 +1,5 @@
 <template>
-  <div :class='$style.myContainer' v-on:click='onClick'>
+  <div :class='$style.myContainer'>
     <div :class='$style.myName'>
       {{ name }}
     </div>
