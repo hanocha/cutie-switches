@@ -66,19 +66,5 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
-  &Switch {
-    &Container {
-      margin: 16px;
-      padding: 16px;
-      border: solid 2px black;
-      border-radius: 8px;
-    }
-
-    &Image {
-      max-width: 128px;
-      max-height: 128px;
-    }
-  }
 }
 </style>
