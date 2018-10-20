@@ -18,7 +18,13 @@
       "CDN_PATH_BASE": "@cdn-path-base"
     }
   },
+  "config": {
+    "nuxt": {
+      "port": "3001"
+    }
+  },
   "dependencies": {
+    "axios": "^0.18.0",
     "howler": "^2.0.15",
     "nuxt": "^1.0.0"
   },
