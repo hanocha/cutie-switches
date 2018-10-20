@@ -1,12 +1,14 @@
 <template>
   <div :class='$style.myContainer'>
     <div :class='$style.myName'>
-      {{ name }}
+      <nuxt-link :to='detailPath'>
+        {{ name }}
+      </nuxt-link>
     </div>
-    <div :class="$style.myImageContainer" v-on:click='onClick'>
+    <div :class="$style.myImageContainer" @click='onClick'>
       <img
-        :src="imgPath"
         :class='$style.myImage'
+        :src="imgSrc"
       >
     </div>
   </div>
@@ -18,15 +20,12 @@ export default {
     imgSrc: String,
     soundSrc: String,
     name: String,
-  },
-  computed: {
-    imgPath: function() {
-      return `${process.env.cdnPathBase}/${this.imgSrc}`;
-    },
+    id: String,
   },
   data: function() {
     return {
-      player: new Howl({ src: `${process.env.cdnPathBase}/${this.soundSrc}` }),
+      player: new Howl({ src: this.soundSrc }),
+      detailPath: `/${this.id}`,
     };
   },
   methods: {

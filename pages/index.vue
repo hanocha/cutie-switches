@@ -1,60 +1,43 @@
 <template>
-  <div :class='$style.myContainer'>
-    <switch-component
-      name='ALPS blue'
-      img-src='alps_blue.png'
-      sound-src='alps_blue.mp3'
-    />
-    <switch-component
-      name='ALPS hulk'
-      img-src='alps_hulk.png'
-      sound-src='alps_hulk.mp3'
-    />
-    <switch-component
-      name='ALPS white'
-      img-src='alps_white.png'
-      sound-src='alps_white.mp3'
-    />
-    <switch-component
-      name='Cherry MX silent red'
-      img-src='cherry_silent_red.png'
-      sound-src='cherry_silent_red.mp3'
-    />
-    <switch-component
-      name='Kailh box pink'
-      img-src='kailh_box_pink.png'
-      sound-src='kailh_box_pink.mp3'
-    />
-    <switch-component
-      name='Kailh box royal'
-      img-src='kailh_box_royal.png'
-      sound-src='kailh_box_royal.mp3'
-    />
-    <switch-component
-      name='Kailh box violet'
-      img-src='kailh_box_violet.png'
-      sound-src='kailh_box_violet.mp3'
-    />
-    <switch-component
-      name='Kailh box white'
-      img-src='kailh_box_white.png'
-      sound-src='kailh_box_white.mp3'
-    />
-    <switch-component
-      name='Kailh pink'
-      img-src='kailh_pink.png'
-      sound-src='kailh_pink.mp3'
-    />
+  <div>
+    <div :class='$style.myContainer'>
+      <switch-component
+        v-for='item in switches'
+        :key='item.id'
+        :name='item.name'
+        :id='item.id'
+        :img-src='item.image_url'
+        :sound-src='item.sound_url'
+      />
+    </div>
+    <nuxt-link to='/new'>create</nuxt-link>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 import { Howl } from 'howler';
 import Switch from '~/components/Switch.vue';
 
 export default {
   components: {
     'switch-component': Switch,
+  },
+  data: function () {
+    return {
+      switches: [],
+    };
+  },
+  created: function () {
+    axios.get('http://localhost:3000/switches')
+      .then(res => {
+        const { data } = res;
+        data.forEach(item => this.switches.push(item));
+      })
+      .catch(error => {
+        console.error('unexpected error!');
+        console.error(error);
+      });
   },
 }
 </script>
