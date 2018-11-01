@@ -15,7 +15,7 @@
   "now": {
     "alias": "cutie-switches.hanolab.net",
     "env": {
-      "CDN_PATH_BASE": "@cdn-path-base"
+      "API_URL": "https://cutie-switches-api.herokuapp.com"
     }
   },
   "config": {
