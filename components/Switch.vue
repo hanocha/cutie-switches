@@ -1,9 +1,7 @@
 <template>
   <div :class='$style.myContainer'>
-    <div :class='$style.myName'>
-      <nuxt-link :to='detailPath'>
-        {{ name }}
-      </nuxt-link>
+    <div :class='$style.myBallon'>
+      <balloon content='Click me!' />
     </div>
     <div :class="$style.myImageContainer" @click='onClick'>
       <img
@@ -11,11 +9,21 @@
         :src="imgSrc"
       >
     </div>
+    <div :class='$style.myName'>
+      <nuxt-link :to='detailPath'>
+        {{ name }}
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
+import Balloon from '~/components/Balloon.vue';
+
 export default {
+  components: {
+    'balloon': Balloon,
+  },
   props: {
     imgSrc: String,
     soundSrc: String,
@@ -50,7 +58,7 @@ export default {
   }
 
   &Name {
-    padding: 0 0 16px 0;
+    margin: 0 0 16px 0;
     font-weight: 600;
     font-size: 1.25em;
     color: #666666;
@@ -59,7 +67,7 @@ export default {
 
   &Image {
     &Container {
-      margin: 0 auto;
+      margin: 16px auto;
     }
 
     max-width: 128px;

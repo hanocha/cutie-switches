@@ -29,7 +29,7 @@ export default {
     };
   },
   created: function () {
-    axios.get('http://localhost:3000/switches')
+    axios.get(`${process.env.apiUrl}/switches`)
       .then(res => {
         const { data } = res;
         data.forEach(item => this.switches.push(item));

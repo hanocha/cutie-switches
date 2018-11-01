@@ -44,7 +44,7 @@ export default {
       const { name, image_url, sound_url } = this;
       console.log(`${name}, ${image_url}, ${sound_url}`);
       axios.put(
-        `http://localhost:3000/switches/${this.id}`,
+        `${process.env.apiUrl}/switches/${this.id}`,
         { name, image_url, sound_url },
       )
         .then(res => {
@@ -56,7 +56,7 @@ export default {
   },
   created: function () {
     console.log('created');
-    axios.get(`http://localhost:3000/switches/${this.id}`)
+    axios.get(`${process.env.apiUrl}/switches/${this.id}`)
       .then(({ data }) => {
         this.name = data.name;
         this.image_url = data.image_url;

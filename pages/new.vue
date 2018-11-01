@@ -34,7 +34,7 @@ export default {
     onSubmit: function(e) {
       const { name, image_url, sound_url } = this;
       axios.post(
-        'http://localhost:3000/switches',
+        `${process.env.apiUrl}/switches`,
         { name, image_url, sound_url },
       )
         .then(res => {
