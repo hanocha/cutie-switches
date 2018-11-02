@@ -10,9 +10,7 @@
       >
     </div>
     <div :class='$style.myName'>
-      <nuxt-link :to='detailPath' :class="$style.myLink">
-        {{ name }}
-      </nuxt-link>
+      {{ name }}
     </div>
   </div>
 </template>

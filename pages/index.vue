@@ -10,7 +10,6 @@
         :sound-src='item.sound_url'
       />
     </div>
-    <nuxt-link to='/new'>create</nuxt-link>
   </div>
 </template>
 
