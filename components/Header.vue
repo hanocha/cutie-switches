@@ -1,6 +1,6 @@
 <template>
   <div :class='$style.myContainer'>
-    <img src='~/assets/logo_outlined.svg'>
+    <img src='~/assets/logo_outlined.svg' :class='$style.myLogo'>
   </div>
 </template>
 
@@ -13,13 +13,14 @@ export default {
 .my {
   &Container {
     display: flex;
-    height: 64px;
+    max-height: 64px;
     justify-content: center;
     margin: 24px;
   }
 
-  &Headline {
+  &Logo {
     margin: auto;
+    height: 100%;
   }
 }
 </style>
