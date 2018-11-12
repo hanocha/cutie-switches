@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <div :class='$style.myContainer'>
-      <switch-component
-        v-for='item in switches'
-        :key='item.id'
-        :name='item.name'
-        :id='item.id'
-        :img-src='item.image_url'
-        :sound-src='item.sound_url'
-      />
-    </div>
+  <div :class='$style.myContainer'>
+    <switch-component
+      v-for='item in switches'
+      :key='item.id'
+      :name='item.name'
+      :id='item.id.toString()'
+      :img-src='item.image_url'
+      :sound-src='item.sound_url'
+    />
   </div>
 </template>
 
@@ -46,6 +44,8 @@ export default {
   &Container {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 32px;
+    justify-content: space-around;
   }
 }
 </style>
