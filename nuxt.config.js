@@ -29,7 +29,6 @@ module.exports = {
   ** environment variables
   */
   env: {
-    cdnPathBase: process.env.CDN_PATH_BASE,
     apiUrl: process.env.API_URL || 'http://localhost:3000',
   },
   /*
